@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+</head>
+<body>
+
+  <p id ="foo">
+    <span>a</span>
+    <span>b</span>
+    <span>c</span>
+  </p>
+
+  <p id ="bar">
+    <span>x</span>
+  </p>
+
+  <script>
+  var foo = document.getElementById('foo');//document全体からid=fooのものを取ってくる
+
+  alert(foo.getElementById);//ElementオブジェクトにgetElementById()メソッドは存在しない->undefinedが返る
+  alert(foo.getElementsByTagName);//ElementオブジェクトにgetElementsByTagName()メソッドは存在するのでalertで返る
+
+  var fooSpans = foo.getElementsByTagName('span');//foo以下からspanタグを持つ要素数を返す
+  alert(fooSpans.length);
+
+  var allSpans = document.getElementsByTagName('span');//document全体から返す
+  alert(allSpans.length);
+
+  </script>
+
+</body>
+</html>

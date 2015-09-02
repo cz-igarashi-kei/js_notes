@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>point</title>
+</head>
+<body>
+  <script>
+  var point = {x:12, y:5};
+
+  point.getDistanceFromOrigin = function(a,b){
+    var dist = Math.sqrt(a*a + b*b);
+    return dist;
+  }
+
+  document.body.innerHTML += point['x'] + '<br>';
+  document.body.innerHTML += point['y'] + '<br>';
+
+
+
+  for (var k in point2) {
+    document.body.innerHTML += k + ':' + point2[k] + '<br>';
+  }
+  //document.body.innerHTML += point.y + '<br>';とおなじ
+  //ブラケット表記でなければならない場合
+  //プロパティ名が数字の場合
+  //a.bのようなドットを含むプロパティ名の場合
+  //プロパティ内の変数にアクセスしたいとき
+  //計算結果として生成された文字列にアクセスしたいとき
+
+  document.body.innerHTML += point['getDistanceFromOrigin()'] + '<br>';
+  document.body.innerHTML += point.getDistanceFromOrigin() + '<br>';
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>関数</title>
+</head>
+<body>
+
+<script>
+function sum(a, b) {
+  // return a + b;
+
+  var sum = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    //arguments.lengthで渡された引数の長さ（今回の場合は個数）がとってこれる
+    sum += arguments[i];
+  }
+  return sum;
+
+  // これでもいける
+  // return Array.prototype.reduce.call(arguments, function(pre, n) {
+  //   return pre + n;
+  // });
+}
+
+var n = sum(3, 4, 5, 6);
+document.body.innerHTML = n;
+</script>
+
+</body>
+</html>

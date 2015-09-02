@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>class名を変更する</title>
+</head>
+
+<style>
+/* .foo-before{.ClassName でクラスの定義
+  background-color:white;
+  color: black;
+}
+.foo-after{
+  background-color: black;
+  color: white;
+} */
+
+＃foo {
+  background-color: #white;
+  color: #black;
+  }
+
+</style>
+
+<body>
+  <div id ="button" class ="foo-before">This is foo. Click me.</div>
+  <div id = "bar">This is bar.</div>
+
+
+  <script type="text/javascript">
+  var button = document.getElementById('button');//ボタンは#buttonのidを持ったdivのみ
+  button.onclick = function toggleStyle(){
+
+    var style = this.style;
+    if (!style.cssFloat){
+      style.cssFloat ='left';
+      style.backgroundColor = 'black';
+      style.color = 'white';
+    }else{
+      style.cssFloat ='';
+      style.backgroundColor = 'white';
+      style.color = 'black';
+    }
+    // this.classList.toggle('foo-after');//クリックでclassをトグル（スタイルを切り替え）
+    // this.classList.toggle('foo-before');
+
+    // this.className = (this.className === 'foo-before')? 'foo-after': 'foo-before';
+  };
+
+  </script>
+
+
+</body>
+</html>

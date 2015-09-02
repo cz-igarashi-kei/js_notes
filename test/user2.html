@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User2</title>
+</head>
+<body>
+
+  <script>
+
+  function User(name){
+    this.name = name;
+
+  }
+
+  User.prototype.speak = function(){
+    document.body.innerHTML +=
+    'こんにちは、' +this.name + 'です。<br>';
+
+  };
+
+  var u1 = new User('アルス');//上位オブジェクト(User)がu1のプロト暗黙リンクの参照先としてセットされる。この暗黙リンク先のオブジェクトを「プロトタイプオブジェクト」と呼ぶ。
+  var u2 = new User('アステア');
+
+  u1.speak();//u1の参照するUser関数はspeakメソッドは持ってない->proto暗黙リンクを辿るとUser.prototypeがspeakメソッドを持ってる->使う
+  u2.speak();
+
+
+  //u2.speak();後のUser.prototypeに入っているのは変数u1で定義したUserインスタンスの持つ情報
+  document.body.innerHTML +=
+  (User.prototype == Object.getPrototypeOf(u1)) + '<br>';//true
+  //getPrototypeOfメソッドはプロト暗黙リンクを辿るための正式なメソッド
+  //プロトタイプチェーン：暗黙リンク(__proto__)を辿ってプロパティ（メソッドなど：ここでいう.speak）を探索する仕組み
+  //すべてのオブジェクトが暗黙リンクを持っており、「自分が持っていなかったら」（再帰的に）上層クラスへ延々戻って探しにゆきます・。
+  //プロトタイプ継承：プロトタイプチェーンはクラスベースオブジェクト志向の継承の仕組みと同じ。
+
+  </script>
+
+</body>
+</html>

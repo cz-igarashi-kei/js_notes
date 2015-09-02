@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>oop</title>
+</head>
+<body>
+  <script>
+  'use strict';
+  //p158課題：即時関数パターンで対応するしかない。
+  var Test= (function Test(){
+    function Test(name){
+      this.name = name;
+    }
+
+  function helper(){//共通処理を括り出して同じ処理が無為に走らないようにする
+    document.body.innerHTML += this.name +'を使う共通処理<br>';
+  }
+
+  Test.prototype.method1 = function(){
+    helper.apply(this);//callORapplyでthisをとってこれます
+    document.body.innerHTML += 'method1固有の処理<br>';
+  }
+
+  Test.prototype.method2 = function(){
+    helper.apply(this);
+    document.body.innerHTML += 'method2固有の処理<br>';
+  }
+  return Test;
+}());
+
+
+
+  var t = new Test('aaa');
+  t.method1();
+  document.body.innerHTML += '<br>';
+  t.method2();
+
+
+  </script>
+
+</body>
+</html>

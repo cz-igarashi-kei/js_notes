@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>比較</title>
+</head>
+<body>
+
+<script>
+'use strict';
+
+document.body.innerHTML += '1:  ' + '0 == 0: ' + (0 == 0) + '<br>';
+document.body.innerHTML += '2:  ' + '0 === 0: ' + (0 === 0) + '<br>';
+document.body.innerHTML += '3:  ' + '0 == 0.0: ' + (0 == 0.0) + '<br>';
+document.body.innerHTML += '4:  ' + '0 === 0.0: ' + (0 === 0.0) + '<br>';
+document.body.innerHTML += '5:  ' + "0 == '': " + (0 == '') + '<br>';//null値が数値型（0）へ型変換されて比較
+document.body.innerHTML += '6:  ' + "0 === '': " + (0 === '') + '<br>';//null値の時点で数値型との厳密な比較はfalse判定される
+document.body.innerHTML += '7:  ' + "0 == '0': " + (0 == '0') + '<br>';
+document.body.innerHTML += '8:  ' + "0 === '0': " + (0 === '0') + '<br>';//文字列型の時点で数値型との厳密な比較はfalse判定される
+document.body.innerHTML += '9:  ' + "0 == '0a': " + (0 == '0a') + '<br>';
+document.body.innerHTML += '10:  ' + "0 === '0a': " + (0 === '0a') + '<br>';
+document.body.innerHTML += '11:  ' + '0 == false: ' + (0 == false) + '<br>';
+document.body.innerHTML += '12:  ' + '0 === false: ' + (0 === false) + '<br>';
+document.body.innerHTML += '13:  ' + '0 == undefined: ' + (0 == undefined) + '<br>';//undifinedが数値型NaNに変換されて比較（!=0ゆえにfalse）
+document.body.innerHTML += '14:  ' + '0 === undefined: ' + (0 === undefined) + '<br>';//
+document.body.innerHTML += '15:  ' + '0 >= undefined: ' + (0 >= undefined) + '<br>';
+document.body.innerHTML += '16:  ' + '0 == null: ' + (0 == null) + '<br>';//null については、null ==null or null==undefinedのみtrue　それ以外は変換以前にfalseを返してくる
+document.body.innerHTML += '17:  ' + '0 === null: ' + (0 === null) + '<br>';
+document.body.innerHTML += '18:  ' + '0 >= null: ' + (0 >= null) + '<br>';
+document.body.innerHTML += '19:' + 'null == undefined: ' + (null == undefined ) + '<br>';
+document.body.innerHTML += '19: ' + 'null === undefined: ' + (null === undefined ) + '<br>';
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>func.html</title>
+</head>
+<body>
+  <script>
+    function sum(a,b){
+      //return a+b;
+      var sum = 0;
+      for(var i=0; i< arguments.length; i++){
+        sum += arguments[i];
+      }
+      return sum;
+    }
+
+    var alias = sum;
+    //var n = alias(3,4,5,6);//関数を値として扱うこともできます。引数の数は"いくつでもよい"
+    //多くても少なくてもチェックされない
+    var n2 = alias(3,4,5,6)
+
+//    var n= sum(3,4,5,6);
+
+//  document.body.innerHTML = n + '<br>';
+   document.body.innerHTML = n2 ;
+
+  </script>
+
+</body>
+</html>

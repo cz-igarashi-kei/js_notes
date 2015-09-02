@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>oop</title>
+</head>
+<body>
+  <script>
+  function Test(name){
+    this.name = name;
+    // this.common = function(){
+    //   document.body.innerHTML += this.name + 'を使う共通処理<br>';
+    //   }
+  }
+
+  // Test.prototype.privatefunction = function(){
+  //   document.body.innerHTML += this.name + 'を使う共通処理<br>';
+  // }
+  !function(proto){
+    function privateFn(){
+      return Object.prototype.toString.call(this);
+    }
+    proto.publicFn = function(){
+      document.body.innerHTML += this.name + 'を使う共通処理<br>';
+      privateFn();
+      };
+    }(Test.prototype);
+
+  Test.prototype.method1 = function(){
+    // document.body.innerHTML += this.name + 'を使う共通処理<br>';
+    // //Testに渡されたnameを参照するには必ずthis.が必要。
+    this.publicFn();
+    document.body.innerHTML += 'method1固有の処理<br>';
+
+  }
+
+  Test.prototype.method2 = function(){
+    // document.body.innerHTML += this.name + 'を使う共通処理<br>';
+    this.publicFn();
+
+    document.body.innerHTML += 'method2固有の処理<br>';
+  }
+
+  var t = new Test('aaa');
+  t.method1();
+  document.body.innerHTML += '<br>';
+  t.method2();
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // document.body.innerHTML += 'Hello, World!<br>';
+    // //改行はクオート内で<br>する
+    // document.body.innerHTML += '<br>Hello, World!';
+    //
+
+    function div(a,b){
+      return a/b;
+    }
+    var n =0;
+    n= div(7,3);// n== 2.3333333....
+    n= ~~(n);//これで整数にできます n== 2
+
+    document.body.innerHTML += '加算の結果は' + 3+2 + 'です。<br>';
+    document.body.innerHTML += '減算の結果は' + (5-8) +'です。<br>';
+    document.body.innerHTML += '乗算の結果は' + 3*4 + 'です。<br>';
+    document.body.innerHTML += '除算の結果は' + n + 'です。<br>';
+    document.body.innerHTML += '剰余の結果は' + 5%2 + 'です。<br>';
+
+
+  </script>
+</body>
+</html>

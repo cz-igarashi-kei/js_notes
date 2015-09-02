@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>p263リスト9.18</title>
+</head>
+<body>
+
+
+  <div id = "foo">fonts</div>
+
+
+
+  <script type="text/javascript">
+  'use strict';
+
+  // var elem =  document.createElement('div');
+  // var text = document.createTextNode('This is a new div element.');
+  // document.body.appendChild(elem);
+  // elem.appendChild(text);
+  // // alert(document.body.getElementsById('div').length);
+  var elem = document.getElementById('div');
+  // elem.parentNode.removeChild(elem);
+
+  var newNode = document.createElement('div');
+  var oldNode = document.getElementById('foo');
+  var parentNode = oldNode.parentNode;
+
+  parentNode.replaceChild(newNode,oldNode);
+
+  var comment = document.createComment('This is comment.');
+  document.body.insertBefore(comment, elem);
+  </script>
+
+</body>
+</html>

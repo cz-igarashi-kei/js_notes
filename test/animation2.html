@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+    .foo-after {
+      background-color: white;
+      color: white;
+    }
+
+    .foo-before {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="foo" class="foo-before" style="position: absolute">This is sample.</div>
+  <script>
+    var elem = document.getElementById('foo');
+    var frame = 0;
+    setInterval(function () {
+      frame += 1;
+      elem.style.right = frame * 1 + 'px';
+      elem.style.bottom = frame * 0.5 + 'px';
+
+      elem.classList.toggle('foo-after');
+      elem.classList.toggle('foo-before');
+    }, 10);
+  </script>
+</body>
+</html>

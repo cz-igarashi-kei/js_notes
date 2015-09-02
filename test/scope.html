@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>scope</title>
+</head>
+<body>
+  <script>
+    function test(){
+      var x = 100;
+      y = 200;
+    }
+
+    var x = 10;
+    var y = 20;
+
+    document.body.innerHTML += 'before x:' + x + '<br>';//10
+    document.body.innerHTML += 'before y:' + y + '<br>';//20
+
+    test();
+
+    document.body.innerHTML += 'after x:' + x + '<br>';//100はtest function内で完結している値（の上スコープ外へ持ち出されない）
+    document.body.innerHTML += 'after y:' + y + '<br>';//200がtest()により代入される
+
+    // test();
+    //
+    // document.body.innerHTML += 'after-tested-twice-x:' + x + '<br>';//100はtest function内で完結している値（の上スコープ外へ持ち出されない）
+    // document.body.innerHTML += 'after-tested-twice-y:' + y + '<br>';//200がtest()により代入される
+
+
+//即時関数パタン：();で完結する（x,y,zはローカル変数）
+(function(){
+  var x =10, y=20;
+  var z= x+y;
+  document.body.innerHTML += z;
+}());
+
+
+
+  </script>
+
+</body>
+</html>

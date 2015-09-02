@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>event handler</title>
+</head>
+<body>
+  <a id="btn" href="http://example.com/"> greeetings</a>
+  <script>
+  // var btn = document.querySelector('#btn');
+  var btn = document.getElementById('btn');
+  // function sayFoo(){
+  //   alert('foo');
+  // }
+  // btn.onclick = sayFoo;
+
+
+  btn.addEventListener('click', function (){
+    event.preventDefault();
+    alert('stop')
+    return false;
+  }, false);
+
+  </script>
+
+</body>
+</html>

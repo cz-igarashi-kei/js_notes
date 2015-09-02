@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>power</title>
+</head>
+<body>
+  <script>
+    function genpower(n){
+      var x =1;
+      return function(){
+        return x *= n; //x = x*n;
+      };
+    }
+
+    var p = genpower(2);
+    for (var i = 0;i<8; i++){
+      document.body.innerHTML += p(i)+ '<br>';
+    }
+
+
+  </script>
+
+</body>
+</html>

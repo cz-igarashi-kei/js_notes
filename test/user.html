@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>user</title>
+</head>
+<body>
+
+  <script>
+    function User(name){
+      this.name = name;
+      this.speak = function(){
+        document.body.innerHTML +=
+        'こんにちは、' + this.name + 'です。<br>';
+      };
+    }
+
+    var u1 = new User('als');
+    var u2 = new User('astere');
+
+    u1.speak();
+    u2.speak();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>animation</title>
+</head>
+
+<body>
+  <div id = "animation" style = "position: absolute"> This is sample.</div>
+
+  <script>
+  var elem = document.getElementById('animation');
+  var frame =0;
+
+  setInterval(function(){
+    while(frame < 700){
+          frame += 1;
+    elem.style.left = frame *10 + 'px';
+  }
+
+}, 1200);
+  </script>
+
+</body>
+</html>
